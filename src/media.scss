@@ -1,122 +1,45 @@
-// mobile sizes
-$a-break: 160px;
-$b-break: 480px;
+// break points
+// smartphones até 480px
+$a-break: 480px; 
+// small tablet size (ipads)
+$b-break: 800px; 
 // tablet sizes
-$c-break: 640px;
-$d-break: 960px;
-// desktop sizes
-$e-break: 1200px+17px;
+$c-break: 1024px; // 960
+// desktop small
+$d-break: 1440px + 17px;
+// desktop big
+// $e-break: -1px; // infinte
+
+// column 96 48 24 12
+// column 64 32 16 8
+//
 
 
 
-// medias ---------------------------------------
-// A -------------------------
+
 @mixin a {
-	@media all {
-		@content;
-	}
+	@content;
 }
-
-@mixin a-port {
-	@media all and (min-height: 66vw) {
-		@content;
-	}
-}
-
-@mixin a-land {
-	@media all and (max-height: 65vw) {
-		@content;
-	}
-}
-
-
-// B -------------------------
 @mixin b {
-	@media all and (min-width: $b-break)  {
+	@media screen and (min-width: $a-break)  {
 		@content;
 	}
 }
-
-@mixin b-port {
-	@media all and (min-width: $b-break) and (min-height: 66vw) {
-		@content;
-	}
-}
-
-@mixin b-land {
-	@media all and (min-width: $b-break) and (max-height: 65vw) {
-		@content;
-	}
-}
-
-// C -------------------------
 @mixin c {
-	@media all and (min-width: $c-break) {
+	@media screen and (min-width: $b-break)  {
 		@content;
 	}
 }
-
-@mixin c-port {
-	@media all and (min-width: $c-break) and (min-height: 66vw) {
-		@content;
-	}
-}
-
-@mixin c-land {
-	@media all and (min-width: $c-break) and (max-height: 65vw) {
-		@content;
-	}
-}
-
-// D -------------------------
 @mixin d {
-	@media all and (min-width: $d-break) {
+	@media screen and (min-width: $c-break)  {
 		@content;
 	}
 }
-
-@mixin d-port {
-	@media all and (min-width: $d-break) and (min-height: 76vw) {
-		@content;
-	}
-}
-
-@mixin d-land {
-	@media all and (min-width: $d-break) and (max-height: 75vw) {
-		@content;
-	}
-}
-
-// E -------------------------
 @mixin e {
-	@media all and (min-width: $e-break) {
+	@media screen and (min-width: $d-break)  {
 		@content;
 	}
 }
-
-@mixin e-port {
-	@media all and (min-width: $e-break) and (min-height: 76vw) {
-		@content;
-	}
-}
-
-@mixin e-land {
-	@media all and (min-width: $e-break) and (max-height: 75vw) {
-		@content;
-	}
-}
-
-@mixin min($minDisplayWidth) {
-	@media all and (min-width: $minDisplayWidth) {
-		@content;
-	}
-}
-@mixin max($maxDisplayWidth) {
-	@media all and (max-width: $maxDisplayWidth) {
-		@content;
-	}
-}
-
 
 
 // pixel density
@@ -157,3 +80,33 @@ $e-break: 1200px+17px;
 		@content;
 	}
 }
+
+
+
+// smaller than or equal to 768 px (smartphones)
+// larger than 768 px (small devices, tablets)
+// larger than 992 px (medium devices)
+// larger than 1200px (large devices)
+
+
+/* start of desktop styles */
+
+// @media screen and (max-width: 991px) {
+// 	/* start of large tablet styles */
+		//C
+// }
+
+// @media screen and (max-width: 767px) {
+// 	/* start of medium tablet styles */
+		// B
+// }
+
+// @media screen and (max-width: 479px) {
+// 	/* start of phone styles */
+		// A
+// }
+
+// references
+// http://www.websitedimensions.com/
+// http://mediag.com/news/popular-screen-resolutions-designing-for-all/
+// https://material.io/guidelines/layout/metrics-keylines.html#metrics-keylines-keylines-spacing

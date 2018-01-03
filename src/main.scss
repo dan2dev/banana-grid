@@ -1,0 +1,219 @@
+/*! banana-grid v1.2.0 | MIT License | github.com/dan2dev/banana-grid */
+@import "./media.scss";
+@import "./reset.scss";
+$percentSizes: (010, 020, 030, 040, 050, 060, 070, 080, 090, 100, 025, 033, 066, 075);
+$colSize: 6rem; //96px;
+* {
+	outline: 1px dotted rgba(0,200,200,1) !important;
+	// background-color: #333 !important;
+}
+
+// até 320 ter pixels
+// 64 ---------------------------
+// 18 grids de 80 ---------------------------
+// 15 grids de 96 ---------------------------
+// 12 grids de 104 --------------------------
+@mixin items_holder() {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center; // vertical
+	align-content: center; // vertical (if break)
+	justify-content: center; // horizontal
+	padding: 0;
+
+	& > * {
+		width: $colSize;
+		padding: 1rem;
+		box-sizing: border-box;
+		flex-shrink: 0;
+		flex-grow: 0;
+		max-width: 100%;
+	}
+	& > .cols, & > .rows {
+		&--a, &--b, &--c, &--d, &--e {
+			padding: 0;
+		}
+	}
+}
+@mixin cols($letter: null) {
+	$l: true;
+	@if $letter == null { $l: ""; }
+	@else {	$l: "--" + $letter; }
+	.cols#{$l} {
+		flex-direction: row;
+		@include items_holder();
+	}
+	.wrap#{$l} {
+		flex-wrap: wrap;
+	}
+	.no-wrap#{$l} {
+		flex-wrap: nowrap;
+	}
+	// cols items - vertical ------------
+	.cols-top#{$l} { align-items: flex-start; align-content: flex-start; }
+	.cols-middle#{$l} { align-items: center; align-content: center; }
+	.cols-bottom#{$l} { align-items: flex-end; align-content: flex-end; }
+	// horizontal 
+	.cols-left#{$l} { justify-content: flex-start; }
+	.cols-center#{$l} { justify-content: center; }
+	.cols-right#{$l} { justify-content: flex-end; }
+}
+
+@mixin rows($letter: null) {
+	$l: true;
+	@if $letter == null { $l: ""; }
+	@else {	$l: "--" + $letter; }
+	.rows#{$l} {
+		flex-direction: column;
+		@include items_holder();
+	}
+	// cols items - vertical ------------
+	.rows-top#{$l} { justify-content: flex-start; }
+	.rows-middle#{$l} { justify-content: center; }
+	.rows-bottom#{$l} { justify-content: flex-end; }
+	// horzontal 
+	.rows-left#{$l} { align-items: flex-start; align-content: flex-start; }
+	.rows-right#{$l} {  align-items: flex-end; align-content: flex-end; }
+	.rows-center#{$l} {  align-items: center; align-content: center; }
+}
+
+@mixin align($letter: null) {
+	// align must be after rows and cols
+	$l: true;
+	@if $letter == null { $l: ""; }
+	@else {	$l: "--" + $letter; }
+	.rows-around#{$l}, .cols-around#{$l} { justify-content: space-around; }
+	.rows-between#{$l}, .cols-between#{$l} { justify-content: space-between; }
+	.rows-stretch#{$l}, .cols-stretch#{$l} { align-items: stretch; align-content: stretch; }
+	.rows-grow#{$l}, .cols-grow#{$l} { & > * { flex-grow: 1; }}	
+	.rows-shrink#{$l}, .cols-shrink#{$l} { & > * { flex-shrink: 1; }}
+	.rows-no-grow#{$l}, .cols-no-grow#{$l} { & > * { flex-grow: 0; }}	
+	.rows-no-shrink#{$l}, .cols-no-shrink#{$l} { & > * { flex-shrink: 0; }}
+	// cols and rows items -----------------
+	.cols#{$l}.cols, .cols#{$l}.rows, .rows#{$l}.cols, .rows#{$l}.rows {
+		@if($letter == "b") {
+			&, &--a {
+				& > .top, & > .middle, & > .bottom, & > .left, & > .center, & > .right  { align-self: inherit; }
+			}
+		}
+		@if($letter == "c") {
+			&, &--a, &--b {
+				& > .top, & > .middle, & > .bottom, & > .left, & > .center, & > .right  { align-self: inherit; }
+			}
+		}
+		@if($letter == "d") {
+			&, &--a, &--b, &--c {
+				& > .top, & > .middle, & > .bottom, & > .left, & > .center, & > .right  { align-self: inherit; }
+			}
+		}
+		@if($letter == "e") {
+			&, &--a, &--b, &--c, &--d {
+				& > .top, & > .middle, & > .bottom, & > .left, & > .center, & > .right  { align-self: inherit; }
+			}
+		}
+	}
+	.cols#{$l}.cols#{$l} {
+		& > .top { align-self: flex-start; }
+		& > .middle { align-self: center; }
+		& > .bottom { align-self: flex-end; }
+	}
+	.rows#{$l}.rows#{$l}  {
+		& > .left { align-self: flex-start; }
+		& > .center { align-self: center; }
+		& > .right { align-self: flex-end; }
+	}
+	.rows#{$l}.rows#{$l}  {
+		& > .stretch { align-self: stretch; }
+	}
+	// --------
+	@if ($letter != null) {
+		.top#{$l} { align-self: flex-start; }
+		.middle#{$l} { align-self: center; }
+		.bottom#{$l} { align-self: flex-end; }
+		.left#{$l} { align-self: flex-start; }
+		.center#{$l} { align-self: center; }
+		.right#{$l} { align-self: flex-end; }
+		.stretch#{$l} { align-self: stretch; }
+		// ----------
+
+	} 
+	// normal
+	// commons all cols and rows
+	.grow#{$l} { flex-grow: 1; }
+	.shrink#{$l} { flex-shrink: 1; }
+	.no-grow#{$l} { flex-grow: 0; }
+	.no-shrink#{$l} { flex-shrink: 0 }
+	// order -------------------------
+	.last#{$l} {
+		order: 144;
+	}
+	.first#{$l} {
+		order: -1;
+	}
+
+}
+@mixin sizes($letter: null) {
+	$l: true;
+	@if $letter == null { $l: ""; }
+	@else {	$l: "--" + $letter; }
+	@for $i from 1 through 15 {
+		.gw-#{$i}#{$l} { width: ($i * 7rem); }
+		.gh-#{$i}#{$l} { height: ($i * 7rem); }
+	}
+	// fixed sizes -----------
+	@for $i from 1 through 144 {
+		.w-#{($i)}#{$l} { width: ($i * 0.5rem); }
+	}
+	@for $i from 1 through 40 {
+		.h-#{($i)}#{$l} { height: ($i * 0.5rem); }
+	}
+	// percent sizes ------------
+	@each $i in $percentSizes {
+		.w-#{$i}p#{$l} {
+			$isize: $i;
+			@if $isize==33 { $isize: 33.3333; }
+			@if $isize==66 { $isize: 66.6666; }
+			width: $isize * 1%;
+		}
+		.h-#{$i}p#{$l} {
+			$isize: $i;
+			@if $isize==33 { $isize: 33.3333; }
+			@if $isize==66 { $isize: 66.6666; }
+			height: $isize * 1%;
+		}
+	}
+}
+@include a {
+	@include cols();
+	@include rows();
+	@include cols(a);
+	@include rows(a);
+	@include align();
+	@include align(a);
+	@include sizes();
+	@include sizes(a);
+}
+@include b {
+	@include cols(b);
+	@include rows(b);
+	@include align(b);
+	@include sizes(b);	
+}
+@include c {
+	@include cols(c);
+	@include rows(c);
+	@include align(c);
+	@include sizes(c);
+}
+@include d {
+	@include cols(d);
+	@include rows(d);
+	@include align(d);
+	@include sizes(d);
+}
+@include e {
+	@include cols(e);
+	@include rows(e);
+	@include align(e);
+	@include sizes(e);
+}

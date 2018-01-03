@@ -1,0 +1,23 @@
+{
+  "name": "banana-grid",
+  "version": "1.0.0",
+  "description": "Simple responsive CSS/SASS grid system.",
+  "main": "src/main",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "sass --watch ./src/main.scss:./dist/main.css --style compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dan2dev/banana-grid.git"
+  },
+  "author": "Danilo C Castro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dan2dev/banana-grid/issues"
+  },
+  "homepage": "https://github.com/dan2dev/banana-grid#readme",
+  "dependencies": {
+    "normalize.css": "^7.0.0"
+  }
+}
