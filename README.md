@@ -2,9 +2,12 @@
 
 ## QuickStart
 ### Ease way
+Just put this in the head of your html:
 ```html
-	<link rel="stylesheet" href="/dist/main.css" />
-	<script type="text/javascript" src="/dist/main.js"></script>
+<head>
+	<link rel="stylesheet" href="https://unpkg.com/banana-grid@1.0.2/dist/banana-grid.min.css" />
+	<script type="text/javascript" src="https://unpkg.com/banana-grid@1.0.2/dist/banana-grid.min.js"></script>
+</head>
 ```
 
 ### Better way
