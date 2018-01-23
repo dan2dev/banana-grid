@@ -1,7 +1,7 @@
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require('path');
 var entry = {
-	'grid': './src/grid.ts'
+	'banana-grid': './src/grid.ts'
 };
 var distPath = './dist';
 var exclude = /(node_modules)|(dist)|(lib)/;
