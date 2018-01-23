@@ -1,109 +1,27 @@
-// break points
-// smartphones até 480px
-$a-break: 480px; 
-// small tablet size (ipads)
-$b-break: 800px; 
-// tablet sizes
-$c-break: 1024px; // 960
-// desktop small
-$d-break: 1440px + 17px;
-// desktop big
-// $e-break: -1px; // infinte
-
-// column 96 48 24 12
-// column 64 32 16 8
-//
-
-
-
-
-@mixin a {
-	@content;
-}
-@mixin b {
-	@media screen and (min-width: $a-break)  {
+@mixin all {
+	.banana-grid {
 		@content;
 	}
 }
-@mixin c {
-	@media screen and (min-width: $b-break)  {
+@mixin x {
+	.x {
 		@content;
 	}
 }
-@mixin d {
-	@media screen and (min-width: $c-break)  {
+@mixin xx {
+	.xx {
 		@content;
 	}
 }
-@mixin e {
-	@media screen and (min-width: $d-break)  {
+@mixin xxx {
+	.xxx {
 		@content;
 	}
 }
-
-
-// pixel density
-@mixin media1x {
-	@media
-	only screen and (-webkit-min-device-pixel-ratio: 1),
-	only screen and (min--moz-device-pixel-ratio: 1),
-	only screen and (min-device-pixel-ratio: 1),
-	only screen and (min-resolution: 1dppx)
-	{
-		@content;
-	}
-}
-@mixin media2x {
-	@media
-	only screen and (-webkit-min-device-pixel-ratio: 2),
-	only screen and (min--moz-device-pixel-ratio: 2),
-	only screen and (min-device-pixel-ratio: 2),
-	only screen and (min-resolution: 2dppx){
-		@content;
-	}
-}
-@mixin media3x {
-	@media
-	only screen and (-webkit-min-device-pixel-ratio:3),
-	only screen and (min--moz-device-pixel-ratio: 3),
-	only screen and (min-device-pixel-ratio: 3),
-	only screen and (min-resolution: 3dppx){
-		@content;
-	}
-}
-@mixin media4x {
-	@media
-	only screen and (-webkit-min-device-pixel-ratio:4),
-	only screen and (min--moz-device-pixel-ratio: 4),
-	only screen and (min-device-pixel-ratio: 4),
-	only screen and (min-resolution: 4dppx){
-		@content;
-	}
-}
-
-
-
-// smaller than or equal to 768 px (smartphones)
-// larger than 768 px (small devices, tablets)
-// larger than 992 px (medium devices)
-// larger than 1200px (large devices)
-
-
-/* start of desktop styles */
-
-// @media screen and (max-width: 991px) {
-// 	/* start of large tablet styles */
-		//C
-// }
-
-// @media screen and (max-width: 767px) {
-// 	/* start of medium tablet styles */
-		// B
-// }
-
-// @media screen and (max-width: 479px) {
-// 	/* start of phone styles */
-		// A
+// @mixin e {
+// 	.e {
+// 		@content;
+// 	}
 // }
 
 // references
