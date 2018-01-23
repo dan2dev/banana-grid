@@ -9,8 +9,8 @@
 		"build": "npm run clean && tsc && webpack -p --config=webpack.min.config.js --progress --color && webpack --progress --color && exit 0",
 		"clean": "rm -rf ./lib/* ./dist/* ./@types/* && exit 0",
 		"clean-node": "rm -rf ./node_modules && exit 0",
-		"commit-release": "git add --all && git commit -a -m \"release\" && git clean -f && exit 0",
-		"deploy": "release-it && exit 0"
+		"commit-release": "git commit -a -m \"release\" && git clean -i && git rebase && exit 0",
+		"deploy": "git clean -i && release-it && exit 0"
 	},
 	"babel": {
 		"presets": [
