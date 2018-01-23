@@ -5,8 +5,8 @@
 Just put this in the head of your html:
 ```html
 <head>
-	<link rel="stylesheet" href="https://unpkg.com/banana-grid@1.0.2/dist/banana-grid.min.css" />
-	<script type="text/javascript" src="https://unpkg.com/banana-grid@1.0.2/dist/banana-grid.min.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/banana-grid@1.0.4/dist/banana-grid.min.css" />
+	<script type="text/javascript" src="https://unpkg.com/banana-grid@1.0.4/dist/banana-grid.min.js"></script>
 </head>
 ```
 
