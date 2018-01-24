@@ -1,6 +1,6 @@
 {
 	"name": "banana-grid",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"description": "Simple responsive CSS/SASS grid system.",
 	"main": "src/main",
 	"scripts": {
