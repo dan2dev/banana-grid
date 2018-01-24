@@ -159,7 +159,7 @@ $paddingSize: 16px;
 	@for $i from 1 through 144 {
 		.w-#{($i)}#{$l} { width: ($i * 8px); }
 	}
-	@for $i from 1 through 40 {
+	@for $i from 1 through 144 {
 		.h-#{($i)}#{$l} { height: ($i * 8px); }
 	}
 	// percent sizes ------------

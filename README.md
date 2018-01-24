@@ -23,6 +23,13 @@ import "banana-grid";
 ```scss
 @import "~/banana-grid/grid.scss";
 ```
+
+### Helpers
+#### cols and rows
+```html
+```
+
+
 ## screen breakpoints helpers
 |		|		|	--x	|	--xx	|	--xxx	|
 | --- | --- | --- | ---| --- |
@@ -48,6 +55,21 @@ The DIV above will have a **width** of **192 px** in smartphones, tablets and sm
 The DIV above will align on the **left** in smartphones, tablets and small desktops (**screens smaller than 1152 px**) and on the **right** in desktops (**screens equal or bigger than 1152 px**)
 
 ## sizes
+### fixed 8px grid size
+| Width | Height | Pixel Size
+|-- | -- | -- | 
+| **G**rid **W**idth | **G**rid **H**eight | px |
+|	.w-1 |	.h-1	|	8	|
+|	.w-2 |	.h-2	|	16	|
+|	.w-3 |	.h-3	|	24	|
+|	.w-4 |	.h-4	|	32	|
+|	... |	...	|	...	|
+|	.w-40 |	.h-40	|	320	|
+|	.w-41 |	.h-41	|	328	|
+|	... |	...	|	...	|
+|	.w-143 |	.h-143	|	1144	|
+|	.w-144 |	.h-144	|	1152	|
+
 ### fixed 96px grid size
 | Width | Height | Pixel Size | Grid Size |
 |-- | -- | -- | -- |
@@ -69,19 +91,19 @@ The DIV above will align on the **left** in smartphones, tablets and small deskt
 | **W**idth | **H**eight | Percent  |Fraction |
 |-- | -- | -- | -- |
 |  **W**idth **P**ercent | **H**eight  **P**ercent | %  |  |
-|	.w-25p	|	.h-25p		|	25.000%	|	1 / 4	|
+|	.w-25p	|	.h-25p		|	25%	|	1 / 4	|
 |	.w-33p	|	.h-33p		|	33.333%	|	1 / 3	|
 |	.w-66p	|	.h-66p		|	66.666%	|	2 / 3	|
-|	.w-75p	|	.h-75p		|	75.000%	|	3 / 4	|
+|	.w-75p	|	.h-75p		|	75%	|	3 / 4	|
 |		|			|		|		|
-|	.w-10p	|	.h-10p		|	10.000%	|	1 / 10	|
-|	.w-20p	|	.h-20p		|	20.000%	|	2 /10	|
-|	.w-30p	|	.h-30p		|	30.000%	|	3 / 10	|
-|	.w-40p	|	.h-40p		|	40.000%	|	4 / 10	|
-|	.w-50p	|	.h-50p		|	50.000%	|	5 /10	|
-|	.w-60p	|	.h-60p		|	60.000%	|	6 / 10	|
-|	.w-70p	|	.h-70p		|	70.000%	|	7 / 10	|
-|	.w-80p	|	.h-80p		|	80.000%	|	8 /10	|
-|	.w-90p	|	.h-90p		|	90.000%	|	9 / 10	|
-|	.w-100p	|	.h-100p		|	100.000%	|	10 / 10	|
+|	.w-10p	|	.h-10p		|	10%	|	1 / 10	|
+|	.w-20p	|	.h-20p		|	20%	|	2 /10	|
+|	.w-30p	|	.h-30p		|	30%	|	3 / 10	|
+|	.w-40p	|	.h-40p		|	40%	|	4 / 10	|
+|	.w-50p	|	.h-50p		|	50%	|	5 /10	|
+|	.w-60p	|	.h-60p		|	60%	|	6 / 10	|
+|	.w-70p	|	.h-70p		|	70%	|	7 / 10	|
+|	.w-80p	|	.h-80p		|	80%	|	8 /10	|
+|	.w-90p	|	.h-90p		|	90%	|	9 / 10	|
+|	.w-100p	|	.h-100p		|	100%	|	10 / 10	|
 
