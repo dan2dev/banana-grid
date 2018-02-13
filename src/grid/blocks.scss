@@ -10,7 +10,7 @@ $paddingSize: 16px;
 	& > * {
 		padding: $paddingSize;
 		box-sizing: border-box;
-		flex-shrink: 0;
+		flex-shrink: 1;
 		flex-grow: 0;
 		max-width: 100%;
 	}

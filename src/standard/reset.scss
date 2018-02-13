@@ -78,7 +78,12 @@ body {
 	align-items: center;
 	align-content: center;
 	justify-content: center;
+	overflow: hidden;
 	@extend %body;
+	visibility: hidden;
+	&.s {
+		visibility: visible;
+	}
 }
 
 // mobile 

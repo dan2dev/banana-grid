@@ -1,0 +1,14 @@
+/* relative / absolute grid   */
+@mixin hide() { visibility: hidden; position: absolute;  }
+@mixin show() {  visibility: visible; position: unset; }
+
+.s .show { @include show(); }
+.s .hide { @include hide(); }
+@media only screen {
+	.x .show--x, .xx .show--xx, .xxx .show--xxx,  { @include show(); }
+	.x .hide--x, .xx .hide--xx, .xxx .hide--xxx { @include hide(); }
+}
+@media only print {
+	.show--p { @include show(); }
+	.hide--p { @include hide(); }
+}

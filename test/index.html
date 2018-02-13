@@ -3,20 +3,20 @@
 
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="../dist/banana-grid.min.css" />
 	<script src="../dist/main.js"></script>
 	<style>
-		* { outline: 1px solid rgba(0,0,0,0.5); }
+		* { outline: 1px solid rgba(0,0,0,0.5) !important; }
 	</style>
 	<title>Test</title>
 </head>
 
 <body>
-	<div class="cols h-30 w-60">
-		<div class="hide">1</div>
-		<div class="">2</div>
+	<div class="cols align-items-left rw-12 hide show--x hide--xx">
+		<div class="gw-2">1</div>
+		<div class="gw-7">2</div>
 		<div class="">3</div>
 		<!-- <div class="">item3</div>
 		<div class="">item3</div>
@@ -25,6 +25,7 @@
 		<div class="">item3</div> -->
 		<div class="">4</div>
 	</div>
+	<div>teste</div>
 	<!-- <div class="cols space-around-items h-30 w-92">
 		<div class="align-center">1</div>
 		<div class="">2</div>

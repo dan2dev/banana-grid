@@ -87,23 +87,19 @@ The DIV above will align on the **left** in smartphones, tablets and small deskt
 |	.gw-11  |	.gh-11	|	132	|	1056 |
 |	.gw-12	|	.gh-12	|	144	|	1152 |
 
-### fluid sizes
-| **W**idth | **H**eight | Percent  |Fraction |
-|-- | -- | -- | -- |
-|  **W**idth **P**ercent | **H**eight  **P**ercent | %  |  |
-|	.w-25p	|	.h-25p		|	25%	|	1 / 4	|
-|	.w-33p	|	.h-33p		|	33.333%	|	1 / 3	|
-|	.w-66p	|	.h-66p		|	66.666%	|	2 / 3	|
-|	.w-75p	|	.h-75p		|	75%	|	3 / 4	|
-|		|			|		|		|
-|	.w-10p	|	.h-10p		|	10%	|	1 / 10	|
-|	.w-20p	|	.h-20p		|	20%	|	2 /10	|
-|	.w-30p	|	.h-30p		|	30%	|	3 / 10	|
-|	.w-40p	|	.h-40p		|	40%	|	4 / 10	|
-|	.w-50p	|	.h-50p		|	50%	|	5 /10	|
-|	.w-60p	|	.h-60p		|	60%	|	6 / 10	|
-|	.w-70p	|	.h-70p		|	70%	|	7 / 10	|
-|	.w-80p	|	.h-80p		|	80%	|	8 /10	|
-|	.w-90p	|	.h-90p		|	90%	|	9 / 10	|
-|	.w-100p	|	.h-100p		|	100%	|	10 / 10	|
-
+### relative fluid sizes
+| Width | Height | Fraction |
+|-- | -- | -- | 
+| **R**elative **W**idth | **R**relative **H**eight | --  |
+|	.rw-1 |	.rh-1	|	1/12	|
+|	.rw-2	|	.rh-2	|	2/12	|
+|	.rw-3	|	.rh-3	|	3/12	|
+|	.rw-4	|	.rh-4	|	4/12	|
+|	.rw-5	|	.rh-5	|	5/12	|
+|	.rw-6	|	.rh-6	|	6/12	|
+|	.rw-7	|	.rh-7	|	7/12	|
+|	.rw-8	|	.rh-8	|	8/12	|
+|	.rw-9	|	.rh-9	|	8/12	|
+|	.rw-10	|	.rh-10	|	10/12	|
+|	.rw-11  |	.rh-11	|	11/12	|
+|	.rw-12	|	.rh-12	|	12/12	|

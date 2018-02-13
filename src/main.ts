@@ -37,13 +37,30 @@ namespace BananaGrid {
 			} else {
 				unset(size.letter);
 			}
-			document.body.style.width = width + "px";
-			document.body.style.minHeight = window.innerHeight + "px";
+			document.body.style.visibility = "hidden";
+			requestAnimationFrame(() => {
+				document.body.style.width = width + "px";
+				document.body.style.minHeight = height + "px";
+				document.body.style.visibility = "";
+			});
+			// requestAnimationFrame(() => {
+			// 	document.body.style.visibility = "hidden";
+			// 	document.body.style.width = "100vw";
+			// 	// document.body.style.height = "100vh";
+			// 	document.body.style.minHeight = "100vh";
+			// });
+			// setTimeout(() => {
+			// 	requestAnimationFrame(() => {
+			// 		document.body.style.width = width + "px";
+			// 		document.body.style.minHeight = "100vh";
+			// 		document.body.style.visibility = "";
+			// 	});
+			// }, 100);
 		});
 	}
 	function resizeChange(e: UIEvent): void {
 		clearTimeout(timer);
-		timer = setTimeout(render, 200);
+		timer = setTimeout(render, 100);
 	}
 	function init(): void {
 		if (loaded === false && document.body !== undefined && document.body !== null) {

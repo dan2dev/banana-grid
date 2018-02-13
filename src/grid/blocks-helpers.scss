@@ -38,19 +38,19 @@
 @mixin justify-content-center { justify-content: center; }
 @mixin justify-content-end { justify-content: flex-end; }
 
-.s .cols-align-top { @include align-items-start; }
-.s .cols-align-middle { @include align-items-center; }
-.s .cols-align-bottom { @include align-items-end; }
-.s .cols-align-left { @include justify-content-start; }
-.s .cols-align-center { @include justify-content-center; }
-.s .cols-align-right { @include justify-content-end; }
+.s .cols.align-items-top { @include align-items-start; }
+.s .cols.align-items-middle { @include align-items-center; }
+.s .cols.align-items-bottom { @include align-items-end; }
+.s .cols.align-items-left { @include justify-content-start; }
+.s .cols.align-items-center { @include justify-content-center; }
+.s .cols.align-items-right { @include justify-content-end; }
 
-.s .rows-align-top{ @include justify-content-start; } 
-.s .rows-align-middle { @include justify-content-center; }
-.s .rows-align-bottom { @include justify-content-end; }
-.s .rows-align-left { @include align-items-start; }
-.s .rows-align-center { @include align-items-center; }
-.s .rows-align-right  { @include align-items-end; }
+.s .rows.align-items-top{ @include justify-content-start; } 
+.s .rows.align-items-middle { @include justify-content-center; }
+.s .rows.align-items-bottom { @include justify-content-end; }
+.s .rows.align-items-left { @include align-items-start; }
+.s .rows.align-items-center { @include align-items-center; }
+.s .rows.align-items-right  { @include align-items-end; }
 
 @media only screen {
 	%align-items-start { @include align-items-start; }
@@ -60,19 +60,19 @@
 	%justify-content-center { @include justify-content-center; }
 	%justify-content-end { @include justify-content-end; }
 
-	.x .cols-align-top--x, .xx .cols-align-top--xx, .xxx .cols-align-top--xxx { @extend %align-items-start; }
-	.x .cols-align-middle--x, .xx .cols-align-middle--xx, .xxx .cols-align-middle--xxx { @extend %align-items-center; }
-	.x .cols-align-bottom--x, .xx .cols-align-bottom--xx, .xxx .cols-align-bottom--xxx { @extend %align-items-end; }
-	.x .cols-align-left--x, .xx .cols-align-left--xx, .xxx .cols-align-left--xxx { @extend %justify-content-start; }
-	.x .cols-align-center--x, .xx .cols-align-center--xx, .xxx .cols-align-center--xxx { @extend %justify-content-center; }
-	.x .cols-align-right--x, .xx .cols-align-right--xx, .xxx .cols-align-right--xxx { @extend %justify-content-end; }
+	.x .cols.align-items-top--x, .xx .cols.align-items-top--xx, .xxx .cols.align-items-top--xxx { @extend %align-items-start; }
+	.x .cols.align-items-middle--x, .xx .cols.align-items-middle--xx, .xxx .cols.align-items-middle--xxx { @extend %align-items-center; }
+	.x .cols.align-items-bottom--x, .xx .cols.align-items-bottom--xx, .xxx .cols.align-items-bottom--xxx { @extend %align-items-end; }
+	.x .cols.align-items-left--x, .xx .cols.align-items-left--xx, .xxx .cols.align-items-left--xxx { @extend %justify-content-start; }
+	.x .cols.align-items-center--x, .xx .cols.align-items-center--xx, .xxx .cols.align-items-center--xxx { @extend %justify-content-center; }
+	.x .cols.align-items-right--x, .xx .cols.align-items-right--xx, .xxx .cols.align-items-right--xxx { @extend %justify-content-end; }
 
-	.x .rows-align-top--x, .xx .rows-align-top--xx, .xxx .rows-align-top--xxx{ @extend %justify-content-start; }
-	.x .rows-align-middle--x, .xx .rows-align-middle--xx, .xxx .rows-align-middle--xxx { @extend %justify-content-center; }
-	.x .rows-align-bottom--x, .xx .rows-align-bottom--xx, .xxx .rows-align-bottom--xxx { @extend %justify-content-end; }
-	.x .rows-align-left--x, .xx .rows-align-left--xx, .xxx .rows-align-left--xxx { @extend %align-items-start; }
-	.x .rows-align-center--x, .xx .rows-align-center--xx, .xxx .rows-align-center--xxx { @extend %align-items-center; }
-	.x .rows-align-right--x, .xx .rows-align-right--xx, .xxx .rows-align-right--xxx { @extend %align-items-end; }
+	.x .rows.align-items-top--x, .xx .rows.align-items-top--xx, .xxx .rows.align-items-top--xxx{ @extend %justify-content-start; }
+	.x .rows.align-items-middle--x, .xx .rows.align-items-middle--xx, .xxx .rows.align-items-middle--xxx { @extend %justify-content-center; }
+	.x .rows.align-items-bottom--x, .xx .rows.align-items-bottom--xx, .xxx .rows.align-items-bottom--xxx { @extend %justify-content-end; }
+	.x .rows.align-items-left--x, .xx .rows.align-items-left--xx, .xxx .rows.align-items-left--xxx { @extend %align-items-start; }
+	.x .rows.align-items-center--x, .xx .rows.align-items-center--xx, .xxx .rows.align-items-center--xxx { @extend %align-items-center; }
+	.x .rows.align-items-right--x, .xx .rows.align-items-right--xx, .xxx .rows.align-items-right--xxx { @extend %align-items-end; }
 }
 @media only print {
 	%s-align-items-start { align-items: flex-start; align-content: flex-start; }
@@ -82,17 +82,17 @@
 	%s-justify-content-center { justify-content: center; }
 	%s-justify-content-end { justify-content: flex-end; }
 
-	.s .cols-align-top--p { @extend %s-align-items-start; }
-	.s .cols-align-middle--p { @extend %s-align-items-center; }
-	.s .cols-align-bottom--p { @extend %s-align-items-end; }
-	.s .cols-align-left--p { @extend %s-justify-content-start; }
-	.s .cols-align-center--p { @extend %s-justify-content-center; }
-	.s .cols-align-right--p { @extend %s-justify-content-end; }
+	.s .cols.align-items-top--p { @extend %s-align-items-start; }
+	.s .cols.align-items-middle--p { @extend %s-align-items-center; }
+	.s .cols.align-items-bottom--p { @extend %s-align-items-end; }
+	.s .cols.align-items-left--p { @extend %s-justify-content-start; }
+	.s .cols.align-items-center--p { @extend %s-justify-content-center; }
+	.s .cols.align-items-right--p { @extend %s-justify-content-end; }
 
-	.s .rows-align-top--p { @extend %s-justify-content-start; }
-	.s .rows-align-middle--p { @extend %s-justify-content-center; }
-	.s .rows-align-bottom--p { @extend %s-justify-content-end; }
-	.s .rows-align-left--p { @extend %s-align-items-start; }
-	.s .rows-align-center--p { @extend %s-align-items-center; }
-	.s .rows-align-right--p { @extend %s-align-items-end; }
+	.s .rows.align-items-top--p { @extend %s-justify-content-start; }
+	.s .rows.align-items-middle--p { @extend %s-justify-content-center; }
+	.s .rows.align-items-bottom--p { @extend %s-justify-content-end; }
+	.s .rows.align-items-left--p { @extend %s-align-items-start; }
+	.s .rows.align-items-center--p { @extend %s-align-items-center; }
+	.s .rows.align-items-right--p { @extend %s-align-items-end; }
 }
