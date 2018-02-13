@@ -1,0 +1,91 @@
+@import "./colors.scss";
+// * {
+// 	outline: 1px solid rgba(0,0,0,0.1) !important;
+// }
+fieldset {
+	border: none;
+}
+%generic-input {
+	&.--smaller { height: 32px; border-radius: 16px; padding: 7px 20px; font-size: 14px; line-height: 18px; }
+	&.--small {	height: 40px; border-radius: 20px; padding: 11px 20px; font-size: 14px; line-height: 18px; }
+	&.--normal { height: 48px; border-radius: 24px; padding: 14px 20px; font-size: 16px; line-height: 20px; }
+	&.--big { height: 56px; border-radius: 28px; padding: 18px 20px; font-size: 16px; line-height: 20px; }
+	&.--bigger { height: 64px; border-radius: 32px; padding: 22px 20px; font-size: 16px; line-height: 20px;  }
+	box-sizing: border-box;
+	outline: none;
+	vertical-align: middle;
+	display: inline-block;
+	border-radius: 40px;
+	// margin: 16px 8px 16px 8px;
+	margin: 0;
+	clear: both;
+	border: 1px solid transparent;
+}
+
+
+%label {
+	outline: none;
+	box-sizing: border-box;
+	margin: 4px 8px 4px 8px;
+	line-height: 20px;
+	font-size: 16px;
+	display: inline-block;
+	& + input, & + button, & + textarea {
+		margin-top: 2px;
+		clear: both;
+	}
+}
+%button {
+	@extend %generic-input;
+	// @extend %button;
+	@extend .--small;
+	cursor: pointer;
+	border: 1px solid transparent;
+}
+%input {
+	@extend %generic-input;
+	@extend .--normal;
+	display: block;
+	box-sizing: border-box;
+	border-width: 1px;
+	border-style: solid;
+	&:disabled {
+		cursor: default;
+	}
+	&:focus {
+
+	}
+	@extend %input;
+}
+%checkbox {}
+%generic-field {
+	padding: 16px;
+	display: flex;
+	flex-direction: row;
+	max-width: 100%;
+	align-content: center;
+	align-items: center;
+
+	& %generic-input {
+		flex-grow: 1;
+		flex-shrink: 1;
+	}
+}
+%generic-field-group {
+	& %generic-input {
+		&:last-child {
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+		&:first-child {
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+	}
+}
+.form-field { @extend %generic-field; }
+.form-group-cols { @extend %generic-field; }
+.form-group-rows { @extend %generic-field; }
+label { @extend %label; }
+input, select { @extend %input; }
+button, input[type=button] { @extend %button; }

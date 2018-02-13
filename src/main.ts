@@ -1,10 +1,12 @@
+// import "./main.scss";
+
 interface IWidthScreenSize {
 	width: number;
 	letter: string;
 }
 // maybe your should remove the C and put b: 6gd and
 const widthScreenSizes: IWidthScreenSize[] = [
-	{ width: 0, letter: "banana-grid" }, // 0
+	{ width: 0, letter: "s" }, // 0
 	{ width: 576, letter: "x" }, // 6gd					x
 	{ width: 960, letter: "xx" }, // 10gd				xx
 	{ width: (1152), letter: "xxx" }, // 1152 / 12gd		xxx
@@ -12,7 +14,7 @@ const widthScreenSizes: IWidthScreenSize[] = [
 namespace BananaGrid {
 	let loaded: boolean = false;
 	let timer: number | any;
-	let currentLetters: string[] = [];
+	const currentLetters: string[] = [];
 	function set(letter: string): void {
 		if (currentLetters.indexOf(letter) === -1) {
 			currentLetters.push(letter);
@@ -29,7 +31,7 @@ namespace BananaGrid {
 	function render(): void {
 		const width: number = window.innerWidth;
 		const height: number = window.innerHeight;
-		widthScreenSizes.forEach(size => {
+		widthScreenSizes.forEach((size) => {
 			if (size.width <= width) {
 				set(size.letter);
 			} else {
@@ -41,7 +43,7 @@ namespace BananaGrid {
 	}
 	function resizeChange(e: UIEvent): void {
 		clearTimeout(timer);
-		timer = setTimeout(render, 150);
+		timer = setTimeout(render, 200);
 	}
 	function init(): void {
 		if (loaded === false && document.body !== undefined && document.body !== null) {

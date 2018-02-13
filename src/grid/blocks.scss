@@ -1,0 +1,40 @@
+$colSize: 96px;
+$paddingSize: 16px;
+@mixin block() {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center; // vertical
+	align-content: center; // vertical (if break)
+	justify-content: center; // horizontal
+	padding: 0;
+	& > * {
+		padding: $paddingSize;
+		box-sizing: border-box;
+		flex-shrink: 0;
+		flex-grow: 0;
+		max-width: 100%;
+	}
+	& > .cols, & > .rows {
+		padding: 0;
+	}
+}
+%block { @include block(); }
+.s .cols { @extend %block; flex-direction: row; }
+.s .rows { @extend %block; flex-direction: column; }
+@media only screen {
+	%screen-block { @include block(); }
+	.x .rows--x { @extend %screen-block; flex-direction: column; }
+	.x .cols--x { @extend %screen-block; flex-direction: row; }
+
+	.xx .rows--xx { @extend %screen-block; flex-direction: column; }
+	.xx .cols--xx { @extend %screen-block; flex-direction: row; }
+
+	.xxx .rows--xxx { @extend %screen-block; flex-direction: column; }
+	.xxx .cols--xxx { @extend %screen-block; flex-direction: row; }
+}
+@media only print {
+	%print-block { @include block(); }
+	.s .rows--p { @extend %print-block;	flex-direction: column;	}
+	.s .cols--p { @extend %print-block;	flex-direction: row; }
+}
+

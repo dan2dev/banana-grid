@@ -1,0 +1,60 @@
+/* relative / absolute grid   */
+@mixin relative-width($i) { width: ($i * 100% / 12); }
+@mixin relative-height($i) { height: ($i * 100% / 12); }
+@mixin grid-width($i) { width: $i * 96px; }
+@mixin grid-height($i) { height: $i * 96px; }
+@for $i from 1 through 12 {
+	.s .rw-#{$i} { @include relative-width($i); }
+	.s .rh-#{$i} { @include relative-height($i); }
+	.s .gw-#{$i} { @include grid-width($i); }
+	.s .gh-#{$i} { @include grid-height($i); }
+}
+@media only screen {
+	@for $i from 1 through 12 {
+		.x .rw-#{$i}--x,
+		.xx .rw-#{$i}--xx,
+		.xxx .rw-#{$i}--xxx { @include relative-width($i); }
+		.x .rh-#{$i}--x,
+		.xx .rh-#{$i}--xx,
+		.xxx .rh-#{$i}--xxx	{ @include relative-height($i); }
+		.x .gw-#{$i}--x,
+		.xx .gw-#{$i}--xx,
+		.xxx .gw-#{$i}--xxx	{ @include grid-width($i); }
+		.x .gh-#{$i}--x,
+		.xx .gh-#{$i}--xx,
+		.xxx .gh-#{$i}--xxx	{ @include grid-height($i); }
+	}
+}
+@media only print {
+	@for $i from 1 through 12 {
+		.rw-#{$i}--p { @include relative-width($i); }
+		.rh-#{$i}--p { @include relative-height($i); }
+		.gw-#{$i}--p { @include grid-width($i); }
+		.gh-#{$i}--p { @include grid-height($i); }
+	}
+}
+/* 8px grid size */
+@mixin width($i) { width: $i * 8px; }
+@mixin height($i) { height: $i * 8px; }
+@for $i from 1 through 144 {
+	.w-#{$i} { @include width($i); }
+	.h-#{$i} { @include height($i); }
+}
+@media only screen {
+	@for $i from 1 through 144 {
+		.x .w-#{$i}--x,
+		.xx .w-#{$i}--xx,
+		.xxx .w-#{$i}--xxx { @include width($i); }
+		.x .h-#{$i}--x,
+		.xx .h-#{$i}--xx,
+		.xxx .h-#{$i}--xxx  { @include height($i); }
+	}
+}
+@media only print {
+	@for $i from 1 through 144 {
+		.w-#{$i}--p { @include width($i); }
+		.h-#{$i}--p { @include height($i); }
+	}
+}
+
+/*  */

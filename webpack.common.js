@@ -1,12 +1,13 @@
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var path = require('path');
-var entry = {
-	'banana-grid': './src/grid.ts'
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path');
+const entry = {
+	'main': './src/main.ts',
+	'banana-grid': './src/styles.ts'
 };
-var distPath = './dist';
-var exclude = /(node_modules)|(dist)|(lib)/;
+const distPath = './dist';
+const exclude = /(node_modules)|(dist)|(lib)/;
 
-var config = {
+const config = {
 	entry: entry,
 	output: {
 		filename: '[name].js',
@@ -52,36 +53,10 @@ var config = {
 			enforce: 'pre',
 			test: /\.js$/,
 			loader: 'source-map-loader'
-		},
-		{
-			test: /\.css$/,
+		}, {
+			test: /\.(css|sass|scss)$/,
 			use: ExtractTextPlugin.extract({
-				fallback: 'style-loader',
-				use: [{
-					loader: 'css-loader',
-					query: {
-						modules: false,
-						sourceMap: true,
-						importLoaders: 2
-					}
-				}]
-			})
-		},
-		{
-			test: /\.scss$/,
-			exclude: exclude,
-			use: ExtractTextPlugin.extract({
-				fallback: 'style-loader',
-				use: [{
-					loader: 'css-loader',
-					query: {
-						modules: false,
-						sourceMap: true,
-						importLoaders: 2
-					}
-				},
-					'sass-loader'
-				]
+				use: ['raw-loader', 'sass-loader'],
 			})
 		}
 		]
@@ -91,5 +66,7 @@ var config = {
 		'react-dom': 'ReactDOM'
 	}
 };
-
-module.exports = config;
+module.exports = {
+	config,
+	distPath
+};

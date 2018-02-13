@@ -1,0 +1,32 @@
+$content: #f8f9fa !default;
+$content-foreground: #000 !default;
+$writeable: #FFF !default;
+$writeable-foreground: #000 !default;
+$clickable: darken($content, 10%) !default;
+$clickable-foreground: darken ($content-foreground, 20%) !default;
+$accent: #2196F3 !default;
+$accent-foreground: #FFF !default;
+$success: #099 !default;
+$success-foreground: #099 !default;
+$danger: #F00 !default;
+$danger-foreground: #F00 !default;
+$primary: #099 !default;
+$primary-foreground: #099 !default;
+$warning: #099 !default;
+$warning-foreground: #099 !default;
+$disable: #ccc !default;
+$disable-foreground: #ccc !default;
+
+.default {
+	&%body { background-color: $content; color: $content-foreground; }
+	& %label { color: $content-foreground; }
+	// inputs
+	& %input { background-color: $writeable; color: $writeable-foreground; border-color: rgba($writeable-foreground, .1); }
+	& %input:focus { border-color: $accent; }
+	& %input:disabled { background-color: transparent; opacity: 0.5; }
+	// buttons
+	& %button, & %button.secondary  {background-color: darken($clickable, 0); border-color: darken($clickable, 0%); color: $clickable-foreground; }
+	& %button:focus, & %button:active { background-color: darken($clickable, 5%); border-color: darken($clickable, 5%); }
+	& %button:active, &.xx %button:hover { box-shadow: 0px 1px 2px rgba(0,0,0,0.2) inset; }
+}
+
