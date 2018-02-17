@@ -17,6 +17,11 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	font-size: 100%;
 	font-family: inherit;
 	vertical-align: middle;
+	backface-visibility: hidden;
+	perspective: 1000;
+}
+* {
+	backface-visibility: hidden;
 }
 /* remember to define focus styles! */
 :focus {
@@ -46,8 +51,14 @@ q:before, q:after {
 blockquote, q {
 	quotes: "" "";
 }
-
-
+// banana-grid customization
+svg {
+	transform: translate3d(0,0,0.001px);
+	& * {
+		backface-visibility: hidden;
+		transform: translate3d(0,0,0.001px);
+	}
+}
 html, body {
 	margin: 0;
 	padding: 0;

@@ -1,4 +1,4 @@
-/* relative / absolute grid   */
+/* show / hide  */
 @mixin hide() { visibility: hidden; position: absolute;  }
 @mixin show() {  visibility: visible; position: unset; }
 
@@ -11,4 +11,20 @@
 @media only print {
 	.show--p { @include show(); }
 	.hide--p { @include hide(); }
+}
+
+// order
+@mixin order($i) { order: $i; }
+@for $i from 1 through 12 {
+	.s .order-#{$i} { @include order($i); }
+}
+@media only screen {
+	@for $i from 1 through 12 {
+		.x .order-#{$i}--x, .xx .order-#{$i}--xx, .xxx .order-#{$i}--xxx { @include order($i); }
+	}
+}
+@media only print {
+	@for $i from 1 through 12 {
+		.p .order-#{$i}--p { @include order($i); }
+	}
 }
