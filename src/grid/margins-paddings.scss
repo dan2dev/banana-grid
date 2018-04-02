@@ -13,13 +13,13 @@
 .s {
 	@for $i from 0 through 8 {
 		& .margin-#{$i} { @include margin($i); }
-		& .margin-top-#{$i} { @include margin-left($i); }
+		& .margin-top-#{$i} { @include margin-top($i); }
 		& .margin-right-#{$i} { @include margin-right($i); }
 		& .margin-bottom-#{$i} { @include margin-bottom($i); }
 		& .margin-left-#{$i} { @include margin-left($i); }
 
 		& .padding-#{$i} { @include padding($i); }
-		& .padding-top-#{$i} { @include padding-left($i); }
+		& .padding-top-#{$i} { @include padding-top($i); }
 		& .padding-right-#{$i} { @include padding-right($i); }
 		& .padding-bottom-#{$i} { @include padding-bottom($i); }
 		& .padding-left-#{$i} { @include padding-left($i); }
@@ -29,13 +29,13 @@
 	.x {
 		@for $i from 0 through 8 {
 			& .margin-#{$i}--x { @include margin($i); }
-			& .margin-top-#{$i}--x { @include margin-left($i); }
+			& .margin-top-#{$i}--x { @include margin-top($i); }
 			& .margin-right-#{$i}--x { @include margin-right($i); }
 			& .margin-bottom-#{$i}--x { @include margin-bottom($i); }
 			& .margin-left-#{$i}--x { @include margin-left($i); }
 	
 			& .padding-#{$i}--x { @include padding($i); }
-			& .padding-top-#{$i}--x { @include padding-left($i); }
+			& .padding-top-#{$i}--x { @include padding-top($i); }
 			& .padding-right-#{$i}--x { @include padding-right($i); }
 			& .padding-bottom-#{$i}--x { @include padding-bottom($i); }
 			& .padding-left-#{$i}--x { @include padding-left($i); }
@@ -44,13 +44,13 @@
 	.xx {
 		@for $i from 0 through 8 {
 			& .margin-#{$i}--xx { @include margin($i); }
-			& .margin-top-#{$i}--xx { @include margin-left($i); }
+			& .margin-top-#{$i}--xx { @include margin-top($i); }
 			& .margin-right-#{$i}--xx { @include margin-right($i); }
 			& .margin-bottom-#{$i}--xx { @include margin-bottom($i); }
 			& .margin-left-#{$i}--xx { @include margin-left($i); }
 	
 			& .padding-#{$i}--xx { @include padding($i); }
-			& .padding-top-#{$i}--xx { @include padding-left($i); }
+			& .padding-top-#{$i}--xx { @include padding-top($i); }
 			& .padding-right-#{$i}--xx { @include padding-right($i); }
 			& .padding-bottom-#{$i}--xx { @include padding-bottom($i); }
 			& .padding-left-#{$i}--xx { @include padding-left($i); }
@@ -59,13 +59,13 @@
 	.xxx {
 		@for $i from 0 through 8 {
 			& .margin-#{$i}--xxx { @include margin($i); }
-			& .margin-top-#{$i}--xxx { @include margin-left($i); }
+			& .margin-top-#{$i}--xxx { @include margin-top($i); }
 			& .margin-right-#{$i}--xxx { @include margin-right($i); }
 			& .margin-bottom-#{$i}--xxx { @include margin-bottom($i); }
 			& .margin-left-#{$i}--xxx { @include margin-left($i); }
 	
 			& .padding-#{$i}--xxx { @include padding($i); }
-			& .padding-top-#{$i}--xxx { @include padding-left($i); }
+			& .padding-top-#{$i}--xxx { @include padding-top($i); }
 			& .padding-right-#{$i}--xxx { @include padding-right($i); }
 			& .padding-bottom-#{$i}--xxx { @include padding-bottom($i); }
 			& .padding-left-#{$i}--xxx { @include padding-left($i); }
