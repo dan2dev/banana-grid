@@ -4,8 +4,9 @@
 		"declaration": true,
 		"declarationDir": "./@types",
 		"sourceMap": true,
+    "isolatedModules": false,
 		"noImplicitAny": true,
-		"module": "es6",
+		"module": "none",
 		"target": "es2015",
 		"moduleResolution": "node",
 		"skipLibCheck": true,
@@ -16,6 +17,7 @@
 		"emitDecoratorMetadata": true,
 		"experimentalDecorators": true,
 		"noEmit": false,
+		"strictNullChecks": true,
 		"lib": [
 			"es5",
 			"es6",
@@ -60,7 +62,9 @@
 		"tsdist"
 	],
 	"include": [
-		"src/**/*.tsx",
 		"src/**/*.ts"
-	]
+	],
+	"files": [
+		"src/main.ts"
+	],
 }

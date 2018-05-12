@@ -8,26 +8,26 @@
 .s .no-grow-items { & > * { flex-grow: 0; }}
 .s .no-shrink-items { & > * { flex-shrink: 0; }}
 @media only screen {
-	.x .space-around-items--x, .xx .space-around-items--xx, .xxx .space-around-items--xxx { justify-content: space-around; }
-	.x .space-between-items--x, .xx .space-between-items--xx, .xxx .space-between-items--xxx { justify-content: space-between; }
-	.x .wrap-items--x, .xx .wrap-items--xx,	.xxx .wrap-items--xxx { flex-wrap: wrap; }
-	.x .no-wrap-items--x, .xx .no-wrap-items--xx, .xxx .no-wrap-items--xxx { flex-wrap: nowrap; }
-	.x .stretch-items--x, .xx .stretch-items--xx, .xxx .stretch-items--xxx { align-items: stretch; align-content: stretch; }
-	.x .grow-items--x, .xx .grow-items--xx, .xxx .grow-items--xxx { & > * { flex-grow: 1; }}
-	.x .shrink-items--x, .xx .shrink-items--xx, .xxx .shrink-items--xxx { & > * { flex-shrink: 1; }}
-	.x .no-grow-items--x, .xx .no-grow-items--xx, .xxx .no-grow-items--xxx { & > * { flex-grow: 0; }}
-	.x .no-shrink-items--x, .xx .no-shrink-items--xx, .xxx .no-shrink-items--xxx { & > * { flex-shrink: 0; }}
+  .x .space-around-items--x, .xx .space-around-items--xx, .xxx .space-around-items--xxx { justify-content: space-around; }
+  .x .space-between-items--x, .xx .space-between-items--xx, .xxx .space-between-items--xxx { justify-content: space-between; }
+  .x .wrap-items--x, .xx .wrap-items--xx,	.xxx .wrap-items--xxx { flex-wrap: wrap; }
+  .x .no-wrap-items--x, .xx .no-wrap-items--xx, .xxx .no-wrap-items--xxx { flex-wrap: nowrap; }
+  .x .stretch-items--x, .xx .stretch-items--xx, .xxx .stretch-items--xxx { align-items: stretch; align-content: stretch; }
+  .x .grow-items--x, .xx .grow-items--xx, .xxx .grow-items--xxx { & > * { flex-grow: 1; }}
+  .x .shrink-items--x, .xx .shrink-items--xx, .xxx .shrink-items--xxx { & > * { flex-shrink: 1; }}
+  .x .no-grow-items--x, .xx .no-grow-items--xx, .xxx .no-grow-items--xxx { & > * { flex-grow: 0; }}
+  .x .no-shrink-items--x, .xx .no-shrink-items--xx, .xxx .no-shrink-items--xxx { & > * { flex-shrink: 0; }}
 }
 @media only print {
-	.s .wrap-items--p { flex-wrap: wrap; }
-	.s .no-wrap-items--p { flex-wrap: nowrap; }
-	.s .space-around-items--p { justify-content: space-around; }
-	.s .space-between-items--p { justify-content: space-between; }
-	.s .stretch-items--p, .s .cols-stretch--p { align-items: stretch; align-content: stretch; }
-	.s .grow-items--p, .s .cols-grow--p { & > * { flex-grow: 1; }}
-	.s .shrink-items--p, .s .cols-shrink--p { & > * { flex-shrink: 1; }}
-	.s .no-grow-items--p, .s .cols-no-grow--p { & > * { flex-grow: 0; }}
-	.s .no-shrink-items--p, .s .cols-no-shrink--p { & > * { flex-shrink: 0; }}
+  .s .wrap-items--p { flex-wrap: wrap; }
+  .s .no-wrap-items--p { flex-wrap: nowrap; }
+  .s .space-around-items--p { justify-content: space-around; }
+  .s .space-between-items--p { justify-content: space-between; }
+  .s .stretch-items--p, .s .cols-stretch--p { align-items: stretch; align-content: stretch; }
+  .s .grow-items--p, .s .cols-grow--p { & > * { flex-grow: 1; }}
+  .s .shrink-items--p, .s .cols-shrink--p { & > * { flex-shrink: 1; }}
+  .s .no-grow-items--p, .s .cols-no-grow--p { & > * { flex-grow: 0; }}
+  .s .no-shrink-items--p, .s .cols-no-shrink--p { & > * { flex-shrink: 0; }}
 }
 
 // cols items - vertical ------------------------------------------------
@@ -38,61 +38,45 @@
 @mixin justify-content-center { justify-content: center; }
 @mixin justify-content-end { justify-content: flex-end; }
 
-.s .cols.align-items-top { @include align-items-start; }
-.s .cols.align-items-middle { @include align-items-center; }
-.s .cols.align-items-bottom { @include align-items-end; }
-.s .cols.align-items-left { @include justify-content-start; }
-.s .cols.align-items-center { @include justify-content-center; }
-.s .cols.align-items-right { @include justify-content-end; }
+@mixin align-items($size: "s") {
+  $sizeclass: $size !default;
+  @if $size == "p" {
+    $sizeclass: "s";
+  }
+  .#{$sizeclass} {
+    $size-append: "" !default;
+    @if $size == "s" {
+      $size-append: "";
+    } @else {
+      $size-append: "--" + $size;
+    }
+    .cols#{$size-append} {
+      &.cols-top#{$size-append} { @include align-items-start; }
+      &.cols-middle#{$size-append} { @include align-items-center; }
+      &.cols-bottom#{$size-append}  { @include align-items-end; }
+      &.cols-left#{$size-append} { @include justify-content-start; }
+      &.cols-center#{$size-append} { @include justify-content-center; }
+      &.cols-right#{$size-append} { @include justify-content-end; }
+    }
+    .rows#{$size-append} {
+      &.rows-top#{$size-append} { @include justify-content-start; }
+      &.rows-middle#{$size-append} { @include justify-content-center; }
+      &.rows-bottom#{$size-append} { @include justify-content-end; }
+      &.rows-left#{$size-append} { @include align-items-start; }
+      &.rows-center#{$size-append} { @include align-items-center; }
+      &.rows-right#{$size-append} { @include align-items-end; }
+    }
+  }
+}
 
-.s .rows.align-items-top{ @include justify-content-start; } 
-.s .rows.align-items-middle { @include justify-content-center; }
-.s .rows.align-items-bottom { @include justify-content-end; }
-.s .rows.align-items-left { @include align-items-start; }
-.s .rows.align-items-center { @include align-items-center; }
-.s .rows.align-items-right  { @include align-items-end; }
+@include align-items("s");
 
 @media only screen {
-	%align-items-start { @include align-items-start; }
-	%align-items-center { @include align-items-center; }
-	%align-items-end { @include align-items-end; }
-	%justify-content-start { @include justify-content-start; }
-	%justify-content-center { @include justify-content-center; }
-	%justify-content-end { @include justify-content-end; }
-
-	.x .cols.align-items-top--x, .xx .cols.align-items-top--xx, .xxx .cols.align-items-top--xxx { @extend %align-items-start; }
-	.x .cols.align-items-middle--x, .xx .cols.align-items-middle--xx, .xxx .cols.align-items-middle--xxx { @extend %align-items-center; }
-	.x .cols.align-items-bottom--x, .xx .cols.align-items-bottom--xx, .xxx .cols.align-items-bottom--xxx { @extend %align-items-end; }
-	.x .cols.align-items-left--x, .xx .cols.align-items-left--xx, .xxx .cols.align-items-left--xxx { @extend %justify-content-start; }
-	.x .cols.align-items-center--x, .xx .cols.align-items-center--xx, .xxx .cols.align-items-center--xxx { @extend %justify-content-center; }
-	.x .cols.align-items-right--x, .xx .cols.align-items-right--xx, .xxx .cols.align-items-right--xxx { @extend %justify-content-end; }
-
-	.x .rows.align-items-top--x, .xx .rows.align-items-top--xx, .xxx .rows.align-items-top--xxx{ @extend %justify-content-start; }
-	.x .rows.align-items-middle--x, .xx .rows.align-items-middle--xx, .xxx .rows.align-items-middle--xxx { @extend %justify-content-center; }
-	.x .rows.align-items-bottom--x, .xx .rows.align-items-bottom--xx, .xxx .rows.align-items-bottom--xxx { @extend %justify-content-end; }
-	.x .rows.align-items-left--x, .xx .rows.align-items-left--xx, .xxx .rows.align-items-left--xxx { @extend %align-items-start; }
-	.x .rows.align-items-center--x, .xx .rows.align-items-center--xx, .xxx .rows.align-items-center--xxx { @extend %align-items-center; }
-	.x .rows.align-items-right--x, .xx .rows.align-items-right--xx, .xxx .rows.align-items-right--xxx { @extend %align-items-end; }
+  @include align-items("x");
+  @include align-items("xx");
+  @include align-items("xxx");
 }
+
 @media only print {
-	%s-align-items-start { align-items: flex-start; align-content: flex-start; }
-	%s-align-items-center { align-items: center; align-content: center; }
-	%s-align-items-end { align-items: flex-end; align-content: flex-end; }
-	%s-justify-content-start { justify-content: flex-start; }
-	%s-justify-content-center { justify-content: center; }
-	%s-justify-content-end { justify-content: flex-end; }
-
-	.s .cols.align-items-top--p { @extend %s-align-items-start; }
-	.s .cols.align-items-middle--p { @extend %s-align-items-center; }
-	.s .cols.align-items-bottom--p { @extend %s-align-items-end; }
-	.s .cols.align-items-left--p { @extend %s-justify-content-start; }
-	.s .cols.align-items-center--p { @extend %s-justify-content-center; }
-	.s .cols.align-items-right--p { @extend %s-justify-content-end; }
-
-	.s .rows.align-items-top--p { @extend %s-justify-content-start; }
-	.s .rows.align-items-middle--p { @extend %s-justify-content-center; }
-	.s .rows.align-items-bottom--p { @extend %s-justify-content-end; }
-	.s .rows.align-items-left--p { @extend %s-align-items-start; }
-	.s .rows.align-items-center--p { @extend %s-align-items-center; }
-	.s .rows.align-items-right--p { @extend %s-align-items-end; }
+  @include align-items("p");
 }

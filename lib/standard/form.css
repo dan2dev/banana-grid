@@ -1,0 +1,105 @@
+.default label {
+  color: #000; }
+
+.default input, .default select {
+  background-color: #FFF;
+  color: #000;
+  border-color: rgba(0, 0, 0, 0.1); }
+
+.default input:focus, .default select:focus {
+  border-color: #2196F3; }
+
+.default input:disabled, .default select:disabled {
+  background-color: transparent;
+  opacity: 0.5; }
+
+.default button, .default input[type=button], .default button.secondary, .default input.secondary[type=button] {
+  background-color: #dae0e5;
+  border-color: #dae0e5;
+  color: darken #000, 20%; }
+
+.default button:focus, .default input:focus[type=button], .default button:active, .default input:active[type=button] {
+  background-color: #cbd3da;
+  border-color: #cbd3da; }
+
+.default button:active, .default input:active[type=button], .default.xx button:hover, .default.xx input:hover[type=button] {
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2) inset; }
+
+fieldset {
+  border: none; }
+
+button, input[type=button] {
+  box-sizing: border-box;
+  outline: none;
+  vertical-align: middle;
+  display: inline-block;
+  border-radius: 40px;
+  margin: 0;
+  clear: both;
+  border: 1px solid transparent; }
+  button.--smaller, input.--smaller, select.--smaller {
+    height: 32px;
+    border-radius: 16px;
+    padding: 7px 20px;
+    font-size: 14px;
+    line-height: 18px; }
+  button, input[type=button], input.--small, select.--small {
+    height: 40px;
+    border-radius: 20px;
+    padding: 11px 20px;
+    font-size: 14px;
+    line-height: 18px; }
+  button.--normal, input.--normal[type=button] {
+    height: 48px;
+    border-radius: 24px;
+    padding: 14px 20px;
+    font-size: 16px;
+    line-height: 20px; }
+  button.--big, input.--big, select.--big {
+    height: 56px;
+    border-radius: 28px;
+    padding: 18px 20px;
+    font-size: 16px;
+    line-height: 20px; }
+  button.--bigger, input.--bigger, select.--bigger {
+    height: 64px;
+    border-radius: 32px;
+    padding: 22px 20px;
+    font-size: 16px;
+    line-height: 20px; }
+
+label {
+  outline: none;
+  box-sizing: border-box;
+  margin: 4px 8px 4px 8px;
+  line-height: 20px;
+  font-size: 16px;
+  display: inline-block; }
+  label + input, label + button, label + textarea {
+    margin-top: 2px;
+    clear: both; }
+
+button, input[type=button] {
+  cursor: pointer;
+  border: 1px solid transparent; }
+
+input, select {
+  display: block;
+  box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid; }
+  input:disabled, select:disabled {
+    cursor: default; }
+
+.form-field, .form-group-cols, .form-group-rows {
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+  align-content: center;
+  align-items: center; }
+  .form-field button, .form-group-cols button, .form-group-rows button, .form-field input[type=button], .form-group-cols input[type=button], .form-group-rows input[type=button] {
+    flex-grow: 1;
+    flex-shrink: 1; }
+
+/*# sourceMappingURL=form.css.map */

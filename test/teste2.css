@@ -1,0 +1,99 @@
+HTML, BODY
+{
+	min-height: 100%;
+	height: 100%;
+	background-color: #DADADA;
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden;
+}
+.box1
+{
+	line-height: 1.4;
+	font-family: Arial;
+	font-size: 16px;
+	background-color: #0FF;
+	padding: 0px;
+	display: flex;
+	flex-direction: row;
+	align-content: flex-end;
+	align-items: safe flex-end;
+	justify-content: safe right;
+	height: 93px;
+	margin: 8px;
+}
+.box1 > DIV
+{
+	padding: 10px;
+	background-color: #C7ABAB;
+	margin: 10px;
+	text-align: left;
+	/*+border-radius: 16px;*/
+	-moz-border-radius: 16px;
+	-webkit-border-radius: 16px;
+	-khtml-border-radius: 16px;
+	border-radius: 16px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.panel > H1
+{
+	text-align: center;
+	font-family: Arial;
+	padding: 0;
+	font-size: 18px;
+	margin: 8px 0;
+}
+/*x*/
+.s .fixed-menu
+{
+	position: fixed;
+	z-index: 100;
+	left: 45px;
+	top: 60px;
+	background-color: #DED8D8;
+	margin: 0;
+	border: 1px solid black;
+	padding: 0;
+}
+.s .fixed-menu > UL
+{
+	padding: 8px;
+	margin: 0;
+	list-style: none;
+}
+/*semaforo*/
+.semaforo
+{
+	padding: 14px;
+	display: flex;
+	flex-direction: row;
+	/*+align-items: flex-start;*/
+	-webkit-box-align: start;
+	-ms-flex-align: start;
+	-webkit-align-items: flex-start;
+	-moz-align-items: flex-start;
+	align-items: flex-start;
+	justify-content: space-around;
+	width: 600px;
+}
+.semaforo > DIV
+{
+	padding: 18px;
+	border: 7px solid #F70000;
+	/*+border-radius: 100%;*/
+	-moz-border-radius: 100%;
+	-webkit-border-radius: 100%;
+	-khtml-border-radius: 100%;
+	border-radius: 100%;
+	height: 64px;
+	width: 64px;
+}
+.semaforo DIV .data
+{
+	font-size: 15px;
+	display: block;
+	font-weight: bold;
+	padding: 10px 0 0;
+	margin: 0;
+	text-align: center;
+}
