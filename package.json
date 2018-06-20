@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "banana-grid",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "description": "",
   "main": "lib/main",
   "types": "lib/main",
