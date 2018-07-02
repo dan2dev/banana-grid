@@ -6,7 +6,7 @@
 		"sourceMap": true,
     "isolatedModules": false,
 		"noImplicitAny": true,
-		"module": "none",
+		"module": "commonjs",
 		"target": "es2015",
 		"moduleResolution": "node",
 		"skipLibCheck": true,

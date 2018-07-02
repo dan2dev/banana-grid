@@ -112,6 +112,3 @@ namespace BananaGrid {
   }
   init();
 }
-
-import "utility-collection";
-console.log("ok 12");

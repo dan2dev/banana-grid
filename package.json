@@ -8,8 +8,9 @@
   "scripts": {
     "link": "",
     "test": "jest --no-cache",
-    "dev": "npm-run-all --parallel tsc-w && exit 0",
-    "tsc-w": "tsc -w",
+    "dev": "yarn run clean && npm-run-all --parallel tsc sass && exit 0",
+    "sass": "sass --watch src/main.scss:lib/main.css && exit 0",
+    "tsc": "tsc -w",
     "build": "yarn run clean && tsc && yarn run webpack-dev && yarn run webpack-prod && exit 0",
     "clean": "rimraf lib/* dist/* @types/* && exit 0",
     "clean-node": "rimraf package-lock.json node_modules/* && exit 0"
